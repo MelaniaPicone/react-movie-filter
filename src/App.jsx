@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useEffect } from "react";
+
 const startMovies =  [
    { title: 'Inception', genre: 'Fantascienza' },
    { title: 'Il Padrino', genre: 'Thriller' },
@@ -9,6 +12,9 @@ const startMovies =  [
 
 
 function App() {
+const [genre, setGenre] = useState ("");
+
+
   return (<>
  <div className="container my-5">
   <div className="row gy-4">
@@ -17,8 +23,16 @@ function App() {
     </div> 
 
     <div className="col-12">
-      <select name="" id="" className="form select">
+      <select name="" id="" className="form select my-3" onChange={(e) => setGenre(e.target.value)}>
+
+
  <option value="">Seleziona genere</option>
+ <option value="Fantascienza">Fantascienza</option>
+ <option value="Azione">Azione</option>
+ <option value="Romantico">Romantico</option>
+ <option value="Thriller">Thriller</option>
+
+ 
 {startMovies.map((movie, index) => {return (<option value={movie.genre} key={`genre-${index}`} > {movie.genre} </option>)}
 )}
       </select>

@@ -14,8 +14,14 @@ function App() {
   <div className="row gy-4">
     <div className="col-12">
       <h1>React Movies</h1>
-    </div>
+    </div> 
+
     <div className="col-12">
+      <select name="" id="" className="form select">
+ <option value="">Seleziona genere</option>
+{startMovies.map((movie, index) => {return (<option value={movie.genre} > {movie.genre} </option>)}
+)}
+      </select>
       <ul className="list-group ms-0">
         {startMovies.map((movie, index)=> {
           return (<li key={index} className="list-group-item">

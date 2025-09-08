@@ -13,7 +13,19 @@ const startMovies =  [
 
 function App() {
 const [genre, setGenre] = useState ("");
+const [movies, setMovies] = useState (startMovies);
 
+useEffect(()=> {
+if (genre !== ""){
+  const selectedMovies = startMovies.filter(movie => movie.genre === genre);
+  setMovies(selectedMovies);
+}
+
+else {
+  setMovies(startMovies);
+}
+
+}, [genre]);
 
   return (<>
  <div className="container my-5">
@@ -32,7 +44,7 @@ const [genre, setGenre] = useState ("");
  <option value="Romantico">Romantico</option>
  <option value="Thriller">Thriller</option>
 
- 
+
 {startMovies.map((movie, index) => {return (<option value={movie.genre} key={`genre-${index}`} > {movie.genre} </option>)}
 )}
       </select>

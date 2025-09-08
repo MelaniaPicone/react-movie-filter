@@ -45,7 +45,7 @@ else {
  <option value="Thriller">Thriller</option>
 </select>
       <ul className="list-group ms-0">
-        {startMovies.map((movie, index)=> {
+        {movies.map((movie, index)=> {
           return (<li key={index} className="list-group-item">
             {movie.title}
           </li>);

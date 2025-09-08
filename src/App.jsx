@@ -19,7 +19,7 @@ function App() {
     <div className="col-12">
       <select name="" id="" className="form select">
  <option value="">Seleziona genere</option>
-{startMovies.map((movie, index) => {return (<option value={movie.genre} > {movie.genre} </option>)}
+{startMovies.map((movie, index) => {return (<option value={movie.genre} key={`genre-${index}`} > {movie.genre} </option>)}
 )}
       </select>
       <ul className="list-group ms-0">

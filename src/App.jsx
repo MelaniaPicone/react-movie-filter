@@ -35,7 +35,7 @@ else {
     </div> 
 
     <div className="col-12">
-      <select name="" id="" className="form select my-3" onChange={(e) => setGenre(e.target.value)}>
+      <select name="" id="" className="form select my-3" value= {genre} onChange={(e) => setGenre(e.target.value)}>
 
 
  <option value="">Seleziona genere</option>
@@ -43,11 +43,7 @@ else {
  <option value="Azione">Azione</option>
  <option value="Romantico">Romantico</option>
  <option value="Thriller">Thriller</option>
-
-
-{startMovies.map((movie, index) => {return (<option value={movie.genre} key={`genre-${index}`} > {movie.genre} </option>)}
-)}
-      </select>
+</select>
       <ul className="list-group ms-0">
         {startMovies.map((movie, index)=> {
           return (<li key={index} className="list-group-item">
@@ -55,7 +51,7 @@ else {
           </li>);
         })}
       </ul>
-    </div>
+    </div> 
   </div>
  </div>
 
